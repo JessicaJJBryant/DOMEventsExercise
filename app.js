@@ -28,3 +28,10 @@ form.addEventListener(`submit`, f => { //f is the parameter
 // 4a
 const darkMode = document.querySelector(`#dm`);
 // 4b
+// Using getElementsByTagName so an HTMLCollection will be formed of all the elements on the webpage:
+const allElements = document.getElementsByTagName(`*`);
+darkMode.addEventListener(`click`, () =>{ //listening for click to #dm button
+    for (eachElement of allElements) {      //for of loop to iterate through eachElement in the HTMLCollection allElements.
+        eachElement.classList.toggle('dark-mode'); //and toggle on the `dark-mode` class from the css page (too cool!)
+    };
+});

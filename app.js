@@ -35,3 +35,6 @@ darkMode.addEventListener(`click`, () =>{ //listening for click to #dm button
         eachElement.classList.toggle('dark-mode'); //and toggle on the `dark-mode` class from the css page (too cool!)
     };
 });
+
+// 5a
+const reality = document.querySelector(`#reality`);

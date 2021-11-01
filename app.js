@@ -17,11 +17,15 @@ h3.addEventListener(`mouseenter`, () => {
 // 3a
 const form = document.querySelector(`form`);
 // 3b
-form.addEventListener(`submit`, f => { //f is the parameter
-    f.preventDefault(); //stops the form from submitting
-    const a = form.elements.quote.value; //sets the value to a
-    alert(`${a}`); //displays value of a in alert
-    form.elements.quote.value = ''; //sets textarea back to empty
+// form.addEventListener(`submit`, f => { //f is the parameter
+//     f.preventDefault(); //stops the form from submitting
+//     const a = form.elements.quote.value; //sets the value to a
+//     alert(`${a}`); //displays value of a in alert
+//     form.elements.quote.value = ''; //sets textarea back to empty
+// });
+// OR (Perhaps a better way because it allow a BackEnd submit too)
+form.addEventListener(`submit`, () => { 
+    alert(`${form.elements.quote.value}`); 
 });
 
 // BONUS
@@ -45,16 +49,6 @@ reality.addEventListener(`click`, () => {  //this listens for the clicks
     clickCount++;                           //and on each click, adds 1 to clickCount
     if (clickCount < 3) {   //for the 1st and 2nd click, clickCount is under 3
         alert(`You have successfully moved to another reality`); //this alert occurs
-    } else if (clickCount == 3)         //on the 3rd click, clickCount is 3
+    } else if (clickCount === 3)         //on the 3rd click, clickCount is 3. Matt said to make this strict equality.
         alert(`OH NO! You can only move to a new another reality a couple times. You are stuck in this reality!`); //this alert occurs
 }); //then after the 3rd click, for 4th and on up clicks, nothing happens. We're stuck!!!!!
-
-
-
-// } else if (c===3) {
-//     alert(`OH NO! You can only move to a new another reality a couple times. You are stuck in this reality!`);
-// }
-
-// let c = 0;
-//     if(c=1, c<=2, c++) {
-// 5b. Using addEventListener, have an alert that says "You have successfully moved to another reality" pop up when you click on the button. However, have this setup so that when the button is clicked a third time have the following alert display instead of the "You have successfully moved to another reality" alert. New alert "OH NO! You can only move to a new another reality a couple times. You are stuck in this reality!". And finally, when the button is clicked a fourth, fifth, sixth, etc. time have it do nothing (AKA Disable the button).
